@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --coverage",
     "build": "webpack --mode production",
-    "build-dev": "webpack-dev-server --mode development",
+    "build-dev": "webpack --mode development --watch",
     "start": "nodemon server/server.js"
   },
   "repository": {
@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/UnlikelyHero/eatplan#readme",
   "devDependencies": {
-    "@babel/cli": "^7.15.7",
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
     "@babel/preset-react": "^7.14.5",
@@ -35,10 +34,10 @@
     "jest": "^27.2.5",
     "style-loader": "^3.3.0",
     "webpack": "^5.58.1",
-    "webpack-cli": "^4.9.0",
-    "webpack-dev-server": "^4.3.1"
+    "webpack-cli": "^4.9.0"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hot-loader": "^4.13.0"
