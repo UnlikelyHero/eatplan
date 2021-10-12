@@ -15,19 +15,15 @@ const recipeSchema = new Schema({
   },
   imageURL: {
     type: String,
-    required: false,
   },
   source: {
     type: String,
-    required: false,
   },
   url: {
     type: String,
-    required: false,
   },
   ingredients: {
     type: [ingredientSchema],
-    maxItems: 3,
   },
 }, { timestamps: true });
 
