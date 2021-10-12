@@ -10,5 +10,5 @@ app.use(express.json());
 
 mongoose.connect(mongo.url, mongo.options)
   .then(() => app.listen(port))
-  .then(() => console.log(`listening at http://localhost:${port}`))
-  .catch((err) => console.error('unable to start server:', err));
+  .then(() => console.log(`EatPlanner is listening at http://localhost:${port}`))
+  .catch((err) => console.error('Unable to start EatPlanner server:', err));
