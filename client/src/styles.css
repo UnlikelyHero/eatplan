@@ -1,4 +1,26 @@
-.App {
-  margin: 1rem;
+body {
+  background-color: rgba(234, 237, 237, 1);
+  margin: 0;
+  padding: 0;
+}
+
+.titlebar {
+  background-color: rgba(174, 144, 233, 1);
+  padding: 20px;
+}
+
+.app {
+  background-color: rgba(255, 255, 255, 1);
+  padding-top: 20px;
   font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+}
+
+.menuweek {
+  background-color: rgba(174, 144, 233, 1);
+  padding: 20px;
+}
+
+.debug {
+  border: solid 1px black;
 }
