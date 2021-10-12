@@ -2,6 +2,12 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
+const ingredientSchema = new Schema({
+  description: {
+    type: String,
+  },
+});
+
 const recipeSchema = new Schema({
   label: {
     type: String,
@@ -19,13 +25,10 @@ const recipeSchema = new Schema({
     type: String,
     required: false,
   },
-  ingredients: [
-    {
-      description: {
-        type: String,
-      },
-    },
-  ],
+  ingredients: {
+    type: [ingredientSchema],
+    maxItems: 3,
+  },
 }, { timestamps: true });
 
 const Recipe = mongoose.model('Recipe', recipeSchema);
