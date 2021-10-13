@@ -8,4 +8,4 @@ test('searchRecipes should return data from edamam api', done => {
   }
 
   searchRecipes('chicken', callback);
-})
+});
