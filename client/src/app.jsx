@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles.css';
+import RecipesList from './components/recipesList.jsx';
 
 import {
   Box,
@@ -24,8 +25,8 @@ const App = () => (
           </Paper>
         </Grid>
         <Grid item sm={12} lg={8}>
-          <Paper elevation={2} className="menuweek">
-            Recipe Search
+          <Paper elevation={2} className="recipeView">
+            <RecipesList />
           </Paper>
         </Grid>
       </Grid>
