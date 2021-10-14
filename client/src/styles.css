@@ -6,22 +6,68 @@ body {
 
 .titlebar {
   background-color: rgba(174, 144, 233, 1);
-  padding: 20px;
+  padding: 5px;
 }
 
 .app {
   background-color: rgba(255, 255, 255, 1);
   padding-top: 20px;
   font-family: Arial, Helvetica, sans-serif;
-  height: 100vh;
+  height: 95vh;
 }
 
 .menuweek {
-  padding: 20px;
+  padding: 10px;
+  height: 89vh;
 }
 
 .recipeView {
   background-color: rgba(234, 237, 237, 1);
+  padding: 10px;
+  height: 89vh;
+  overflow: auto;
+}
+
+.searchResults {
+  margin-top: 10px;
+}
+
+.thumbnail {
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.noImage {
+  width: 100px;
+  height: 100px;
+}
+
+.recipeItem {
+  padding: 5px;
+  border-bottom: 1px solid grey;
+}
+
+.weekday {
+  padding: 5px;
+  border: 1px solid grey;
+}
+
+.columnList {
+  column-count: 2;
+  line-height: 110%;
+  margin: 0;
+}
+
+.nolink {
+  text-decoration: none;
+}
+
+.nolink-black {
+  text-decoration: none;
+  color: black;
 }
 
 .debug {

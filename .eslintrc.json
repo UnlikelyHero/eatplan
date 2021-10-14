@@ -22,6 +22,12 @@
     "rules": {
         "no-console": "off",
         "import/order": "off",
-        "import/extensions": "off"
+        "import/extensions": "off",
+        "react/jsx-boolean-value": "off",
+        "react/no-array-index-key": "off",
+        "react/forbid-prop-types": "off",
+        "object-curly-newline": "off",
+        "react/jsx-one-expression-per-line": "off",
+        "react/require-default-props": "off"
     }
 }

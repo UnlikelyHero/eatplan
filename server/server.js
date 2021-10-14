@@ -1,7 +1,10 @@
 const express = require('express');
 const {
-  searchRecipes,
+  getPlans,
   getSavedRecipes,
+  savePlans,
+  saveRecipe,
+  searchRecipes,
 } = require('./modules');
 
 const app = express();
@@ -15,6 +18,7 @@ app.get('/recipes/search', (req, res) => {
   if (req.query?.q) {
     searchRecipes(req.query.q, (e, results) => {
       if (e) {
+        console.log('unable to search recipes:', e);
         res.status(500).send('Internal Server Error');
       } else {
         res.send(results);
@@ -29,9 +33,50 @@ app.get('/recipes/saved', (req, res) => {
   console.log('received a saved recipes request');
   getSavedRecipes((e, savedRecipes) => {
     if (e) {
+      console.log('unable to retrieve saved recipes:', e);
       res.status(500).send('Internal Server Error');
     } else {
+      console.log('successfully retireved saved recipes');
       res.send(savedRecipes);
+    }
+  });
+});
+
+app.post('/recipes/save', (req, res) => {
+  console.log('received a save recipe request');
+  saveRecipe(req.body, (e, recipeId) => {
+    if (e) {
+      console.log('unable to save recipe:', e);
+      res.status(500).send('Internal Server Error');
+    } else {
+      console.log('recipe saved with', recipeId);
+      res.send('recipe saved');
+    }
+  });
+});
+
+app.get('/plans', (req, res) => {
+  console.log('received a request for plans');
+  getPlans((e, plansData) => {
+    if (e) {
+      console.log('unable to retireve plans', e);
+      res.status(500).send('Internal Server Error');
+    } else {
+      console.log('successfully retireved plans');
+      res.send(plansData);
+    }
+  });
+});
+
+app.post('/plans', (req, res) => {
+  console.log('recieved a save plans request');
+  savePlans(req.body, (e) => {
+    if (e) {
+      console.log('unable to save plans:', e);
+      res.status(500).send('Internal Server Error');
+    } else {
+      console.log('plans saved successfully');
+      res.send('Plans have successfully been saved');
     }
   });
 });

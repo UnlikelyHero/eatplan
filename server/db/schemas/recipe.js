@@ -11,9 +11,12 @@ const ingredientSchema = new Schema({
 
 const recipeSchema = new Schema({
   label: String,
-  imageURL: String,
+  image: String,
   source: String,
-  url: String,
+  url: {
+    type: String,
+    unique: true,
+  },
   ingredients: {
     type: [ingredientSchema],
     maxItems: 3,
@@ -23,36 +26,3 @@ const recipeSchema = new Schema({
 const Recipe = mongoose.model('Recipe', recipeSchema);
 
 module.exports = Recipe;
-
-// // TESTING
-// const testRecipe = new Recipe({
-//   label: 'Chicken Vesuvio',
-//   image: 'https://www.edamam.com/web-img/e42/e42f9119813e890af34c259785ae1cfb.jpg',
-//   source: 'Serious Eats',
-//   url: 'http://www.seriouseats.com/recipes/2011/12/chicken-vesuvio-recipe.html',
-//   ingredients: [
-//     {
-//       text: '1/2 cup olive oil',
-//       quantity: 0.5,
-//       measure: 'cup',
-//       food: 'olive oil',
-//     },
-//     {
-//       text: '5 cloves garlic, peeled',
-//       quantity: 5,
-//       measure: 'clove',
-//       food: 'garlic',
-//     },
-//     {
-//       text: '2 large russet potatoes, peeled and cut into chunks',
-//       quantity: 2,
-//       measure: '<unit>',
-//       food: 'russet potatoes',
-//     },
-//   ],
-// });
-
-// testRecipe.save()
-//   .then((result) => console.log(result))
-//   .then(() => db.close())
-//   .catch((err) => console.error(err));
